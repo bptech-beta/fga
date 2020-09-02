@@ -1,5 +1,7 @@
 package com.sec.controllers;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,12 +16,8 @@ public class HomeResource {
 
   @GetMapping("/user")
   public String user(){
-    return ("<h1>HELLO USER<h1>");
-  }
-
-
-  @GetMapping("/admin")
-  public String admin(){
-    return ("<h1>HELLO ADMIN<h1>");
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    String currentPrincipalName = authentication.getName();
+    return ("<h1>HELLO USER<h1>" + currentPrincipalName);
   }
 }
