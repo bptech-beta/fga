@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ShittyController {
 
 
-  @GetMapping("/try")
+  @GetMapping("/anna")
   public String index(){
     return "login";
   }
