@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "GROUP")
+@Table(name = "GRP")
 public class Group {
 
   @Id
@@ -14,6 +14,10 @@ public class Group {
   private String groupName;
   @OneToMany(cascade = CascadeType.ALL)
   private List<Event> eventList = new ArrayList<>();
+
+  public Group(String groupName) {
+    this.groupName = groupName;
+  }
 
   public Long getId() {
     return id;

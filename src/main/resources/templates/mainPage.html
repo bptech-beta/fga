@@ -10,6 +10,13 @@
 </head>
 <body>
 <div th:replace="include/header :: header"></div>
-asd
+<div>
+    <form action="/create_group" method="post">
+        <label>
+            <input type="text" placeholder="GroupName" class="form-control" th:name="gn"/>
+        </label>
+        <button th:type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 </body>
 </html>
