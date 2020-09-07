@@ -9,6 +9,7 @@ import java.util.*;
 public class MyUserDetails implements UserDetails {
 
   private String userName;
+
   private String password;
   private boolean active;
   private List<GrantedAuthority> authorities;

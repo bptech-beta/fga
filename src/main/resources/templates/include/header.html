@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
+    <div class="navbar navbar-inverse navbar-dark bg-dark navbar-fixed-top" th:fragment="header">
         <a class="btn btn-sm btn-light" href="/">Home</a>
         <a href="javascript: document.logoutForm.submit()" role="menuitem" class="btn btn-sm btn-danger"> Logout</a>
         <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
