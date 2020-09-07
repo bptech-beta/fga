@@ -1,9 +1,11 @@
 package com.sec.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "User")
+@Table(name = "USER")
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -12,6 +14,16 @@ public class User {
   private String password;
   private boolean active;
   private String roles;
+  @OneToMany(cascade = CascadeType.ALL)
+  private List<Group> groupList = new ArrayList<>();
+
+  public List<Group> getGroupList() {
+    return groupList;
+  }
+
+  public void setGroupList(List<Group> groupList) {
+    this.groupList = groupList;
+  }
 
   public int getId() {
     return id;
