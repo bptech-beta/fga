@@ -15,6 +15,9 @@ public class Group {
   @OneToMany(cascade = CascadeType.ALL)
   private List<Event> eventList = new ArrayList<>();
 
+  public Group() {
+  }
+
   public Group(String groupName) {
     this.groupName = groupName;
   }

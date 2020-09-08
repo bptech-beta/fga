@@ -21,4 +21,10 @@ public class GroupController {
     groupService.newGroup(groupName);
     return "redirect:/";
   }
+
+  @RequestMapping(value = "/delete_group", method = RequestMethod.POST)
+  public String deleteGroup(@ModelAttribute(name = "groupId") Long groupId){
+    groupService.deleteGroup(groupId);
+    return "redirect:/";
+  }
 }

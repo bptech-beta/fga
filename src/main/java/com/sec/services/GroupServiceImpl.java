@@ -5,6 +5,9 @@ import com.sec.repositories.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class GroupServiceImpl implements GroupService {
 
@@ -19,5 +22,15 @@ public class GroupServiceImpl implements GroupService {
   public void newGroup(String groupName) {
     Group group = new Group(groupName);
       groupRepository.save(group);
+  }
+
+  @Override
+  public List<Group> findAll() {
+    return groupRepository.findAll();
+  }
+
+  @Override
+  public void deleteGroup(Long groupId) {
+    groupRepository.deleteById(groupId);
   }
 }
