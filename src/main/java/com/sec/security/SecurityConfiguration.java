@@ -34,7 +34,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers( "/favicon.ico").permitAll()
            // .antMatchers("/user").hasAnyRole("USER")
             .antMatchers("/").hasAnyRole("ADMIN" , "USER")
-            .antMatchers("/create_group").hasAnyRole("ADMIN" , "USER")
+            .antMatchers("/groups").hasAnyRole("ADMIN" , "USER")
             .and().formLogin();
   }
 

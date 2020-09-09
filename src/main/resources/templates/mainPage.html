@@ -8,32 +8,8 @@
 </head>
 <body>
 <div th:replace="include/header :: header"></div>
-<div>
-    <form action="/create_group" method="post">
-        <label>
-            <input type="text" placeholder="Csoportnév" class="form-control" th:name="gn"/>
-        </label>
-        <button th:type="submit" class="btn btn-sm btn-outline-warning">Új csoport</button>
-    </form>
-    <div>
-        <table>
-            <th:block th:each="group : ${groups}">
-                <tr>
-                    <td th:text="${group.getGroupName()}">NAME</td>
-                    <td>
-                        <form action="/delete_group" method="post">
-                            <label>
-                                <input hidden="true" type="text" th:value="${group.getId()}" class="form-control" th:name="groupId"/>
-                            </label>
-                            <text th:value="${group.getId()}" id="groupId"></text>
-                            <button th:type="submit" class="btn btn-sm btn-danger">Delete</button>
-                        </form>
 
-                    </td>
-                </tr>
-            </th:block>
-        </table>
-    </div>
-</div>
+<a href="groups" class="btn btn-sm btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;Groups</a>
+
 </body>
 </html>
