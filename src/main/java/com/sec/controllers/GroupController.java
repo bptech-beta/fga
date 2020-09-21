@@ -29,6 +29,6 @@ public class GroupController {
   @GetMapping("/groups")
   public String groups(Model model){
     model.addAttribute("groups", groupService.findAll());
-    return ("groups");
+    return "groups";
   }
 }

@@ -8,27 +8,24 @@
 </head>
 <body>
 <div th:replace="include/header :: header"></div>
-<div>
-    <form action="/create_group" method="post">
-        <label>
-            <input type="text" placeholder="Csoportnév" class="form-control" th:name="gn"/>
-        </label>
-        <button th:type="submit" class="btn btn-sm btn-outline-warning">Új csoport</button>
-    </form>
+
     <div>
         <table class="table">
             <tr>
-                <th> GROUP NAME </th>
+                <th> EVENT NAME </th>
+                <th> LOCATION </th>
+                <th> DATE </th>
             </tr>
-            <th:block th:each="group : ${groups}">
+            <th:block th:each="event : ${evts}">
                 <tr>
-                    <td th:text="${group.getGroupName()}">NAME</td>
+                    <td th:text="${event.getEventName()}"> EVENT NAME </td>
+                    <td th:text="${event.getLocation()}"> LOCATION </td>
+                    <td th:text="${event.getDate()}"> DATE </td>
                     <td>
-                        <form action="/delete_group" method="post">
+                        <form action="/delete_event" method="post">
                             <label>
-                                <input hidden="true" type="text" th:value="${group.getId()}" class="form-control" th:name="groupId"/>
+                                <input hidden="true" type="text" th:value="${event.getId()}" class="form-control" th:name="eventId"/>
                             </label>
-                            <text th:value="${group.getId()}" id="groupId"></text>
                             <button th:type="submit" class="btn btn-sm btn-danger">Delete</button>
                         </form>
                     </td>
@@ -36,6 +33,5 @@
             </th:block>
         </table>
     </div>
-</div>
 </body>
 </html>

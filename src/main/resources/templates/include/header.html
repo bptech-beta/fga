@@ -19,6 +19,7 @@
              <a class="btn btn-sm btn-light" href="/">Home</a>
         </div>
         <div class="ml-auto">
+            <a href="events" class="btn btn-sm btn-info"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;Events</a>
             <a href="groups" class="btn btn-sm btn-info"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;Groups</a>
             <a href="javascript: document.logoutForm.submit()" role="menuitem" class="btn btn-sm btn-danger"> Logout</a>
             <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
