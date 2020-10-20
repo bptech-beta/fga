@@ -9,6 +9,18 @@
 <body>
 <div th:replace="include/header :: header"></div>
 
+<div>
+    <form action="/create_event" method="post">
+        <label>
+            <input type="text" placeholder="Event Name" class="form-control" th:name="eventName"/>
+            <input type="datetime-local" placeholder="Date" class="form-control" th:name="date"/>
+            <input type="text" placeholder="Desc" class="form-control" th:name="description"/>
+            <input type="text" placeholder="Location" class="form-control" th:name="location"/>
+            <input type="checkbox" placeholder="ISForEveryone" class="form-control" th:name="isItForEveryOne"/>
+        </label>
+        <button th:type="submit" class="btn btn-sm btn-outline-warning">New event</button>
+    </form>
+</div>
     <div>
         <table class="table">
             <tr>
